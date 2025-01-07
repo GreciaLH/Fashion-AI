@@ -16,9 +16,7 @@ env/
 .ipynb_checkpoints
 
 # Datos
-data/raw/images/
-data/raw/styles.csv
-data/processed/
+data/raw/
 
 # Modelos entrenados
 models/saved_models/*
