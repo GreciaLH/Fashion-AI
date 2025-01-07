@@ -1,0 +1,14 @@
+Resultados de la Evaluación del Modelo
+=====================================
+
+              precision    recall  f1-score   support
+
+     Apparel       0.99      1.00      0.99      4325
+ Accessories       0.99      0.99      0.99      2165
+    Footwear       1.00      1.00      1.00      1894
+
+    accuracy                           0.99      8384
+   macro avg       0.99      0.99      0.99      8384
+weighted avg       0.99      0.99      0.99      8384
+
+Número total de errores: 53
