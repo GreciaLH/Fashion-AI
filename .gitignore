@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+venv/
+env/
+.env
+
+# IDEs
+.vscode/
+.idea/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Datos
+data/raw/images/
+data/raw/styles.csv
+data/processed/
+
+# Modelos entrenados
+models/saved_models/*
+!models/saved_models/.gitkeep
+
+# Logs y resultados
+logs/
+results/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
