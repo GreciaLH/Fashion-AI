@@ -10,6 +10,7 @@ from unittest.mock import MagicMock, patch
 
 # Asegurar que podemos importar desde src
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src/api')))
 
 @pytest.fixture
 def sample_image():
@@ -66,7 +67,22 @@ def sample_prediction():
 def test_app():
     """Fixture que configura la aplicación FastAPI para pruebas."""
     from fastapi.testclient import TestClient
-    with patch('model_service.FashionClassifierService'):
-        # Importar aquí para asegurar que patch se aplique primero
-        from main import app
-        return TestClient(app)
+    
+    # Importamos directamente el módulo main y aplicamos el parche al modelo_service
+    import main
+    
+    # Guardar la instancia original
+    original_service = main.model_service
+    
+    # Crear un mock para reemplazar el servicio
+    mock_service = MagicMock()
+    main.model_service = mock_service
+    
+    # Crear el cliente de prueba
+    client = TestClient(main.app)
+    
+    # Devolver tanto el cliente como el mock para que las pruebas puedan configurarlo
+    yield client, mock_service
+    
+    # Restaurar el servicio original después de la prueba
+    main.model_service = original_service
