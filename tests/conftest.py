@@ -13,10 +13,14 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 
 @pytest.fixture
 def sample_image():
-    """Fixture que genera una imagen de prueba como bytes."""
-    img = Image.new('RGB', (224, 224), color='red')
+    """Crear una imagen de muestra para pruebas"""
+    # Crear una imagen RGB simple de 100x100 píxeles (roja)
+    img = Image.new('RGB', (100, 100), color='red')
+    
+    # Convertir a bytes como si fuera cargada desde un archivo
     img_byte_arr = io.BytesIO()
     img.save(img_byte_arr, format='JPEG')
+    
     return img_byte_arr.getvalue()
 
 @pytest.fixture
