@@ -8,8 +8,10 @@ from model_service import FashionClassifierService
 
 app = FastAPI(title="Fashion Classifier API")
 
-# Montar archivos estáticos (mantener para compatibilidad)
-app.mount("/static", StaticFiles(directory="src/api/static"), name="static")
+# Verificar si existe el directorio antes de montarlo
+static_dir = Path("src/api/static")
+if static_dir.exists() and static_dir.is_dir():
+    app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")
 
 # Inicializar servicio del modelo
 model_service = FashionClassifierService()
