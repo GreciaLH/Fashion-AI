@@ -10,8 +10,12 @@ import io
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'models')))
 from model_service import FashionClassifierService
 
+def get_model_service():
+    """Función para obtener el servicio del modelo (facilita el mockeo en pruebas)"""
+    return FashionClassifierService()
+
 # Inicializar servicio del modelo
-model_service = FashionClassifierService()
+model_service = get_model_service()
 
 def predict_image(image):
     """
@@ -33,19 +37,18 @@ def predict_image(image):
     
     return probabilities
 
-# Configurar la interfaz de Gradio
-# Configuración de la interfaz
-demo = gr.Interface(
-    fn=predict_image,
-    inputs=gr.Image(type="pil", label="Sube tu imagen de moda 👗"),
-    outputs=gr.Label(num_top_classes=3, label="Resultados"),
-    theme=gr.themes.Soft(
-        primary_hue="purple",
-        bg_color="#0d0d0d",  # Fondo oscuro para resaltar efectos de vidrio
-        font=[gr.themes.GoogleFont("Montserrat"), "sans-serif"]  # Corrige "Montserrat" (falta una 't')
-    ),
-    examples=[["ejemplo_camiseta.jpg"], ["ejemplo_zapato.jpg"]]
-)
+def create_interface():
+    """Función para crear la interfaz de Gradio (facilita el mockeo en pruebas)"""
+    return gr.Interface(
+        fn=predict_image,
+        inputs=gr.Image(type="pil", label="Sube tu imagen de moda 👗"),
+        outputs=gr.Label(num_top_classes=3, label="Resultados"),
+        theme="default",  # Usando un tema estándar para compatibilidad
+        examples=[["ejemplo_camiseta.jpg"], ["ejemplo_zapato.jpg"]]
+    )
+
+# Crear la interfaz de Gradio
+demo = create_interface()
 
 # Iniciar la aplicación Gradio
 if __name__ == "__main__":
