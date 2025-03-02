@@ -44,7 +44,7 @@ El dataset proporciona una amplia variedad de productos de moda que incluyen pre
 ## Estructura del Proyecto
 
 ```
-fashion-classifier/
+Fashion-AI/
 ├── config/
 │   └── model_config.py       # Configuración global del modelo
 ├── data/
