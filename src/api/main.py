@@ -57,8 +57,8 @@ demo = gr.Interface(
     fn=predict_image,
     inputs=gr.Image(type="pil", label="Cargar Imagen de Moda"),
     outputs=gr.Label(num_top_classes=3, label="Clasificación"),
-    title="Fashion Classifier",
-    description="Sube una imagen de un producto de moda para clasificarlo como Ropa (Apparel), Accesorios (Accessories), o Calzado (Footwear).",
+    title="Clasificador de Moda",
+    description="Sube una imagen de un producto de moda para clasificarlo como Ropa, Accesorios o Calzado.",
     theme="huggingface",  # Tema moderno y atractivo
     allow_flagging="never"  # Desactivar el botón de flag
 )

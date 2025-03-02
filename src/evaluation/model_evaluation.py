@@ -87,8 +87,8 @@ def main():
     model_path = Path('models/saved_models/best_model.pth')
     model = load_trained_model(model_path, device)
     
-    # Nombres de las clases
-    class_names = ['Apparel', 'Accessories', 'Footwear']
+    # Nombres de las clases en español
+    class_names = ['Ropa', 'Accesorios', 'Calzado']
     
     # Evaluar modelo
     print("\nEvaluando modelo...")

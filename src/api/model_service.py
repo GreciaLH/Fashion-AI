@@ -15,7 +15,14 @@ class FashionClassifierService:
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.model = self.load_model()
         self.transform = self.get_transforms()
-        self.classes = ['Apparel', 'Accessories', 'Footwear']
+        # Cambiar los nombres de las clases al español
+        self.classes = ['Ropa', 'Accesorios', 'Calzado']
+        # Mapeo de nombres de clases en inglés a español para compatibilidad
+        self.class_mapping = {
+            'Apparel': 'Ropa',
+            'Accessories': 'Accesorios',
+            'Footwear': 'Calzado'
+        }
     
     def load_model(self):
         model = FashionClassifier(num_classes=3)

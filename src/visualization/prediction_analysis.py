@@ -20,7 +20,8 @@ class PredictionVisualizer:
     def __init__(self, model_path):
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.model = self.load_model(model_path)
-        self.classes = ['Apparel', 'Accessories', 'Footwear']
+        # Cambiar los nombres de las clases al español
+        self.classes = ['Ropa', 'Accesorios', 'Calzado']
         
     def load_model(self, model_path):
         model = FashionClassifier(num_classes=3)
