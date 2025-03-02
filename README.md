@@ -6,6 +6,7 @@ Un sistema de clasificación de imágenes de moda utilizando deep learning con R
 ## Tabla de Contenidos
 
 - [Visión General](#visión-general)
+- [Dataset](#dataset)
 - [Estructura del Proyecto](#estructura-del-proyecto)
 - [Características Principales](#características-principales)
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
@@ -29,6 +30,16 @@ Este proyecto implementa un clasificador de imágenes de moda utilizando transfe
 - **Footwear** (Calzado)
 
 La solución incluye una API RESTful construida con FastAPI y una interfaz gráfica moderna implementada con Gradio, permitiendo a los usuarios interactuar fácilmente con el modelo.
+
+## Dataset
+
+Para este proyecto se utilizó el dataset **Fashion Product Images (Small)** de Kaggle:
+
+- **Título**: Fashion Product Images (Small)
+- **URL**: [https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-small](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-small)
+- **Contenido**: El dataset contiene imágenes de productos de moda con sus respectivos metadatos. Cada producto está identificado por un ID único (por ejemplo, 42431). La información detallada de cada producto se encuentra en el archivo `styles.csv`, que mapea los IDs a categorías de productos y otros atributos. Las imágenes correspondientes se almacenan en el formato `images/42431.jpg`.
+
+El dataset proporciona una amplia variedad de productos de moda que incluyen prendas de vestir, accesorios y calzado, lo que lo hace ideal para entrenar nuestro clasificador de categorías principales.
 
 ## Estructura del Proyecto
 
