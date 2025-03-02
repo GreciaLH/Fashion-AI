@@ -165,7 +165,7 @@ El proceso de entrenamiento utiliza:
 
 ## Evaluación de Resultados
 
-![Matriz de Confusión](\reports\figures\confusion_matrix.png)
+![Matriz de Confusión](https://github.com/GreciaLH/Fashion-AI/blob/dev/reports/figures/confusion_matrix.png)
 
 El modelo alcanza métricas impresionantes:
 - **Precisión global**: 99%
@@ -216,7 +216,7 @@ Ejemplo de respuesta:
 
 La interfaz de usuario proporciona una experiencia interactiva para la clasificación de imágenes:
 
-![Interfaz Gradio](\reports\screenshots\gradio_interface.png)
+![Interfaz Gradio](https://github.com/GreciaLH/Fashion-AI/blob/dev/reports/screenshots/gradio_interface.png)
 
 - Subida intuitiva de imágenes
 - Visualización de resultados con barras de confianza
